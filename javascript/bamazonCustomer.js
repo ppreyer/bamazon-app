@@ -75,11 +75,8 @@ function startConnection() {
                 console.log("Inventory is low for that item. Please select a smaller quantity or something else.");
                 anotherPurchase();
             }
-            // connection.end();
         })
-        // connection.end();
     })
-    // connection.end();
 }
 
 startConnection();
