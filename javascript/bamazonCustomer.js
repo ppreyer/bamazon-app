@@ -67,6 +67,7 @@ function startConnection() {
                         if (err) throw err;
                         var customerPrice = product.quantity * chosenItem.price;
                         console.log(`The total price of your purchase is: $${customerPrice}`);
+                        updateTotalProductSales(customerPrice, chosenItem.item_id, chosenItem.product_sales);
                         anotherPurchase();
                     }
                 );
@@ -82,6 +83,22 @@ function startConnection() {
 }
 
 startConnection();
+
+function updateTotalProductSales(customerPrice, itemId, itemSales) {
+    connection.query(
+                      "UPDATE products SET ? WHERE ?",
+                      [{
+                        product_sales: itemSales + parseInt(customerPrice)
+                      },
+                      {
+                        item_id: itemId
+                      }
+                    ],
+                    function(err) {
+                        if(err) throw err;
+                        console.log("Add sale to table");
+                    })
+}
 
 function anotherPurchase() {
   inquirer.prompt([
@@ -101,35 +118,3 @@ function anotherPurchase() {
 
     })
 }
-
-
-// function promptUserForProduct() {
-
-//   inquirer.prompt([
-//     {
-//       type: "input",
-//       name: "idValue",
-//       message: "Please enter the product ID you'd like to buy."
-//     },
-
-//     {
-//       type: "input",
-//       name: "quantity",
-//       message: "Please enter how many items you would like to purchase."
-//     }
-
-//     ]).then(function(res) {
-//       console.log("ID", res.idValue);
-//       console.log("Quant", res.quantity);
-//     });
-// }
-
-// function checkInventory(resId, resQuantity, inventoryItem) {
-//   var chosenItem;
-//   for(var i = 0; i < results.length; i++) {
-//     if(resId === inventoryItem) {
-//       chosenItem = results[i];
-//       console.log(chosenItem);
-//     }
-//   }
-// }
