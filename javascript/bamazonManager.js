@@ -1,5 +1,6 @@
 var inquirer = require("inquirer");
 var mysql = require("mysql");
+var Table = require('cli-table');
 
 var connection = mysql.createConnection({
     host: "localhost",
@@ -43,11 +44,12 @@ function checkPromptAnswer(res) {
             break;
 
         case "Add to Inventory":
+            showProductTable();
             addToInventory();
             break;
 
         case "Add New Product":
-            console.log("Add new product");
+            showProductTable();
             addNewProduct();
             break
 
@@ -57,37 +59,67 @@ function checkPromptAnswer(res) {
 }
 
 function viewProductsForSale() {
-    console.log("View products function now running...");
+  var table = new Table({
+        head: ['Product ID', 'Product Name', 'Price']
+        });
     var queryAllProducts = "SELECT * FROM products";
     connection.query(queryAllProducts, function(err, res) {
         if (err) throw err;
         console.log("\n" + "Here are the current items for sale:" + "\n");
         for (var i = 0; i < res.length; i++) {
             var item = res[i];
-            console.log(
-                "ID: " + item.item_id + " " +
-                "Product Name: " + item.product_name + " " +
-                "Price: " + item.price
-            );
+                        table.push(
+                    [item.item_id, item.product_name, item.price]
+            )
+            // console.log(
+            //     "ID: " + item.item_id + " " +
+            //     "Product Name: " + item.product_name + " " +
+            //     "Price: " + item.price
+            // );
         }
+        console.log(table.toString());
         showManagerMenu();
     })
 }
 
+function showProductTable() {
+  var table = new Table({
+        head: ['Product ID', 'Product Name', 'Price']
+        });
+    var queryAllProducts = "SELECT * FROM products";
+    connection.query(queryAllProducts, function(err, res) {
+        if (err) throw err;
+        console.log("\n" + "Here are the current items for sale:" + "\n");
+        for (var i = 0; i < res.length; i++) {
+            var item = res[i];
+                        table.push(
+                    [item.item_id, item.product_name, item.price]
+            )
+            // console.log(
+            //     "ID: " + item.item_id + " " +
+            //     "Product Name: " + item.product_name + " " +
+            //     "Price: " + item.price
+            // );
+        }
+        console.log(table.toString());
+    })
+}
+
 function viewLowInventory() {
+    var table = new Table({
+        head: ['Product ID', 'Product Name', 'Price', 'Inventory']
+        });
     var queryProductsLessThanFive = "SELECT * FROM products WHERE stock_quantity < 5";
     connection.query(queryProductsLessThanFive, function(err, res) {
         if (err) throw err;
         console.log("\n" + "Here are the current products that have less than five items in their inventory:" + "\n");
         for (var i = 0; i < res.length; i++) {
             var item = res[i];
-            console.log(
-                "ID: " + item.item_id + " " +
-                "Product Name: " + item.product_name + " " +
-                "Price: " + item.price +
-                "\n"
-            );
+                           table.push(
+                    [item.item_id, item.product_name, item.price, item.stock_quantity]
+            )
         }
+        console.log(table.toString());
         showManagerMenu();
     })
 }

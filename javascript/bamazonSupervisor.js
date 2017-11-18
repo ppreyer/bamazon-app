@@ -83,14 +83,14 @@ function addTotalProfitColumn(res) {
                     function(err) {
                         if (err) throw err;
                     })
-
                 table.push(
-                    [item[j].department_id, item[j].department_name, item[j].over_head_costs]
+                    [item[j].department_id, item[j].department_name, item[j].over_head_costs, item[j].product_sales, totalProfit]
                 );
 
             }
         }
         console.log(table.toString());
+        showSupervisorView();
     })
 
 }
@@ -118,6 +118,7 @@ function createNewDepartment() {
       connection.query("INSERT INTO departments SET ?", newDepartment, function(err, res) {
         if(err) throw err;
         console.log("Department added.");
+        showSupervisorView();
       })
 
     })
