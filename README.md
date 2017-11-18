@@ -35,6 +35,10 @@ The last option allows the user to add a new product to the inventory. Prompts a
 
 <img width="676" alt="bamazonmanageradd" src="https://user-images.githubusercontent.com/1817873/32976350-f29136fe-cbe1-11e7-933f-f0ddb5b195cf.PNG">
 
+<img width="625" alt="bamazonmanagernew" src="https://user-images.githubusercontent.com/1817873/32976373-8a0c7bba-cbe2-11e7-9b10-3cfa63a1d975.PNG">
 
+## Bamazon Supervisor Portal
+
+The Bamazon Executive Portal allows users to view the total profits of the store categorized by department and add new departments.
 
 
