@@ -42,3 +42,23 @@ The last option allows the user to add a new product to the inventory. Prompts a
 The Bamazon Executive Portal allows users to view the total profits of the store categorized by department and add new departments.
 
 <img width="731" alt="bamazonsuperprofit" src="https://user-images.githubusercontent.com/1817873/32976420-5deb0a46-cbe3-11e7-8ccd-342f59f445b2.PNG">
+
+<img width="618" alt="newdeprt" src="https://user-images.githubusercontent.com/1817873/32976448-cb5ab28e-cbe3-11e7-8012-452ca00ffe87.PNG">
+
+## Contributors:
+
+## Kelly Mersereau GitHub
+
+Technologies Used:
+
+Javascript
+nodeJS
+MySQL
+npm packages:
+mysql
+inquirer
+cli-table
+
+## License
+
+Copyright 2017 UNC Coding Bootcamp - Parker Preyer
