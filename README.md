@@ -19,11 +19,19 @@ View low inventory
 Add to inventory
 Add a new product
 
-# Manager Options 1 & 2
+## Manager Options 1 & 2
 
 The first option allows the user to see the list of products that are currently for sale, what department the item belongs to, the price of the product and how much stock is left for that product.
 
 The second option allows the user to see a list of all inventory items that have less than 5 items in stock.
 
 <img width="750" alt="bamazonmanager1" src="https://user-images.githubusercontent.com/1817873/32976286-ec174aee-cbe0-11e7-8ae3-9ae64de8ee19.PNG">
+
+<img width="630" alt="bamazonmanagerlowinventory" src="https://user-images.githubusercontent.com/1817873/32976310-55dfa278-cbe1-11e7-9d3d-18fbd7d5dea5.PNG">
+
+The third option allows the user to update the inventory for a specific product. A prompt asks what the id is for the product the user wants to update. A second prompt asks how many items the user wishes to increase the quantity by.
+
+The last option allows the user to add a new product to the inventory. Prompts ask the user for the product id#, the product name, the department name, the price and the stock quantity.
+
+
 
