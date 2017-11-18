@@ -33,5 +33,8 @@ The third option allows the user to update the inventory for a specific product.
 
 The last option allows the user to add a new product to the inventory. Prompts ask the user for the product id#, the product name, the department name, the price and the stock quantity.
 
+<img width="676" alt="bamazonmanageradd" src="https://user-images.githubusercontent.com/1817873/32976350-f29136fe-cbe1-11e7-933f-f0ddb5b195cf.PNG">
+
+
 
 
