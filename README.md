@@ -47,7 +47,7 @@ The Bamazon Executive Portal allows users to view the total profits of the store
 
 ## Contributors:
 
-## Kelly Mersereau GitHub
+## Parker Preyer GitHub
 
 Technologies Used:
 
