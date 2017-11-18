@@ -1,2 +1,11 @@
-# bamazon-app
-In this activity, you'll be creating an Amazon-like storefront with the MySQL skills you learned this week. The app will take in orders from customers and deplete stock from the store's inventory. As a bonus task, you can program your app to track product sales across your store's departments and then provide a summary of the highest-grossing departments in the store. Make sure you save and require the MySQL and Inquirer npm packages in your homework files--your app will need them for data input and storage.
+#Bamazon
+
+Overview
+
+An interactive shopping node app where MySQL and Node.JS are used to allow users to purchase items as a customer, view, track and update the product inventory as a manager, and track the total sales by department as an executive.
+
+Bamazon Customer Portal
+
+The Bamazon Customer Portal allows users to view the current items available for purchase. The user will be prompted to enter the item id# and how many items they wish to purchase. If the item is in stock, the order will be completed and the user will see the total amount of their purchase.
+
+
